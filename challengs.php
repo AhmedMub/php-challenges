@@ -76,13 +76,63 @@ function elzero5($arr)
     }));
     return array_sum($result);
 }
-//var_dump(elzero5([5, 10, 20, 5, 30, 40]));
+
 /*************************************************************************************/
+function normalSequence($n)
+{
+    return (int)"01120221"[$n % 8];
+}
+
 /*************************************************************************************/
+function countAdverbs($sentence)
+{
+    $result = 0;
+    foreach (explode(" ", $sentence) as $el) {
+        if (substr(preg_replace("/[^A-Z|a-z]/", "", $el), -2) == "ly") {
+            $result++;
+        }
+    }
+    return $result;
+}
+//var_dump(countAdverbs('He was happily, crazily, foolishly over the moon.'));
 /*************************************************************************************/
+function isIsogram($str)
+{
+    return count(array_unique(str_split(strtolower($str)))) == strlen($str);
+}
+//var_dump(isIsogram("Unpredictably"));
 /*************************************************************************************/
+function formatMath($str)
+{
+    return "$str = " . eval('return $sum = (' . $str . ');');
+}
+//var_dump(formatMath("12 - 25"));
 /*************************************************************************************/
+function createArr($chars, $char, $zero)
+{
+    return array_merge($chars, array_fill($zero, count($chars), substr($char, count(array_unique(str_split($char))))));
+}
+//var_dump(createArr(["A", "B", "C", "D", "E"], "@@", 0));
 /*************************************************************************************/
+//$names = ["Osama", "Ahmed", "Sayed", "Mahmoud", "Ali"];
+
+//$mode = next($names);
+//$mode = next($names);
+
+//echo current($names) . "<br>"; // "Sayed"
+
+// Write Line Here
+//$mode = end($names);
+//echo current($names) . "<br>"; // "Ali"
+
+// Write Line Here
+//$mode = reset($names);
+//echo current($names) . "<br>"; // "Osama"
+
+// Write Line Here
+// Write Line Here
+
+//echo current($names) . "<br>"; // "Mahmoud"
 /*************************************************************************************/
 /*************************************************************************************/
 /*************************************************************************************/
